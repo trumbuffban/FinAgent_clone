@@ -58,7 +58,7 @@ A lightweight, high-performance web application designed to help users analyze p
 
 ### Step 1: Clone or Navigate to Directory
 ```powershell
-cd c:\Users\trann\OneDrive\Desktop\Fintechathon
+cd <absolute path to your file>
 ```
 
 ### Step 2: Install Dependencies
