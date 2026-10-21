@@ -33,6 +33,9 @@ A lightweight, high-performance web application designed to help users analyze p
    - Staged financial proposals require explicit user authorization (`APPROVE` / `REJECT`) before updating active budgets.
 7. **Immutable Audit Trail:**
    - Permanent log of timestamps, role tiers, actions, payloads, client IPs, and status outcomes.
+8. **AI Natural Language Copilot:**
+   - An intelligent conversational interface powered by OpenRouter.
+   - Allows users to query their financial data, ask for optimization advice, and interact with the agent seamlessly using natural language.
 
 ---
 
@@ -63,7 +66,20 @@ cd c:\Users\trann\OneDrive\Desktop\Fintechathon
 pip install -r requirements.txt
 ```
 
-### Step 3: Launch the Application
+### Step 3: Configure AI Copilot Environment
+To enable the AI Copilot, you need to configure your OpenRouter API key and select an LLM model. Set up your `.env` file via terminal:
+
+```powershell
+# Copy the example environment file (if available)
+copy .env.example .env
+
+# Alternatively, you can directly echo the variables into the .env file:
+echo OPENROUTER_API_KEY="your_openrouter_api_key_here" >> .env
+echo COPILOT_MODEL="google/gemini-2.5-flash" >> .env
+```
+*(Note: Replace `"your_openrouter_api_key_here"` with your actual API key, and feel free to change the model name to your preferred OpenRouter model).*
+
+### Step 4: Launch the Application
 Run the local FastAPI server:
 ```powershell
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
@@ -73,7 +89,7 @@ Or simply run:
 python -m app.main
 ```
 
-### Step 4: Open in Web Browser
+### Step 5: Open in Web Browser
 Open your browser and navigate to:
 ```
 http://127.0.0.1:8000
